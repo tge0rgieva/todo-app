@@ -1,7 +1,15 @@
+#Ingore IDEA files
+.DS_Store
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+
+# Sensitive information
+hidden_settings.py
 
 # C extensions
 *.so

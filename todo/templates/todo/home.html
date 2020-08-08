@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-7 text-center">
+        <br><br><br><br>
+        <h1>Simplify your todos!</h1>
+        <p>To Do gives you focus, from work to play.</p>
+         <button type="button" class="btn btn-success" onclick="$('#current').click()">Get started!</button>
+
+    </div>
+</div>
+<form method="get" style="display:none;" action="{% url 'current_todos' %}">
+    {% csrf_token %}
+    <button id="current" type="submit">Delete</button>
+</form>{% endblock %}

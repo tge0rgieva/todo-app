@@ -1,0 +1,48 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <h1>Sing Up</h1>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" aria-describedby="username_help"
+                       required>
+                <small id="username_help" class="form-text text-muted">Required. 150 characters or fewer. Letters,
+                                                                       digits and @/./+/-/_ only.</small>
+            </div>
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" id="password1" name="password1" class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Repeat password</label>
+                <input type="password" id="password2" name="password2" class="form-control" required>
+            </div>
+            <div class="row justify-content-center">
+
+            <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <hr>
+        <div class="text-center">
+            You have already an account? <a href="{% url 'login_user' %}">Login</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
